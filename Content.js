@@ -36,7 +36,7 @@ const setDislikes = () => {
     const params = new URLSearchParams(window.location.search);
         const videoId = params.get('v');
 
-        fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=AIzaSyB4XcPRR5oQWj5vxvi1PDlvJMek3_AS2A0`)
+        fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=<your API key>`)
         .then(response => response.json())
         .then(data => 
             {

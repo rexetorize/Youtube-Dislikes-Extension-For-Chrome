@@ -26,40 +26,26 @@ function convertToInternationalCurrencySystem (labelValue) {
 const getDislikes = (dc) => {
     let val;
 
-    for(let i = 1; i <= 99; i++){
-        if(document.getElementsByTagName("yt-formatted-string")[i]?.innerText === "DISLIKE" || 
-        document.getElementsByTagName("yt-formatted-string")[i]?.innerText === "Dislike"){
-            console.log("true : " + i)
-            val = i;
-            break;
-        }
-        else{
-            console.log("false");
-        }
-    }
-
-
-
-    document.getElementsByTagName("yt-formatted-string")[val].innerText =  convertToInternationalCurrencySystem (dc); 
+    document.getElementsByTagName("yt-formatted-string")[10].innerText =  convertToInternationalCurrencySystem (dc); 
 }
 
+const setDislikes = () => {
 
+    if(window.location.href.includes("youtube")){
 
-
-
-window.addEventListener("load", function() {
     const params = new URLSearchParams(window.location.search);
-    const videoId = params.get('v');
+        const videoId = params.get('v');
 
-    fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=<your API key>`)
-    .then(response => response.json())
-    .then(data => 
-        {
-            DISLIKE_COUNT =data.items[0].statistics.dislikeCount;
-            getDislikes(DISLIKE_COUNT);
-        });
+        fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=AIzaSyB4XcPRR5oQWj5vxvi1PDlvJMek3_AS2A0`)
+        .then(response => response.json())
+        .then(data => 
+            {
+                DISLIKE_COUNT =data.items[0].statistics.dislikeCount;
+                getDislikes(DISLIKE_COUNT);
+            });
+    }
+}
 
-    
+setDislikes();
 
- });
-
+window.addEventListener('yt-page-data-updated', setDislikes);

@@ -16,8 +16,7 @@ Now click on Load Unpacked on the top left and selct the folder and load it.
 Now go to youtube click on any video. You may have to refresh the page every time you click on a  video to get the dislike count (I'm trying to fix this)
 
 ## current bug:
-
-The extension works fine but to get a dislike on a video, you have to reload the page once so the JS code gets executed and the api call has been made. Because youtube use a modern JS framework, it changes the DOM without relaoding. So I can't figure out how to listen to these changes and execute my script again when a change has been made. If anyone can fix this, it will be really appreciated. :)
+sometimes the dislikes doesn't show.
 
 ## Note :
 

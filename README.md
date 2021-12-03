@@ -2,7 +2,7 @@
 A simple chrome extension that shows the number of dislikes in a video.
 
 ## work in progress.....
-
+Haven't published to chrome web store. Will do soon.....Probably.
 ## To use this extension :
 
 go to https://developers.google.com/youtube/v3/getting-started or directly go to https://console.cloud.google.com/apis/ and get an API key. and replace the api key in the link in the fetch req. in Content.js
